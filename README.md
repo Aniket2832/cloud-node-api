@@ -12,19 +12,26 @@ This project demonstrates how to deploy a Node.js backend application on AWS EC2
 
 ## Architecture
 
+The application is deployed on an AWS EC2 instance.
+
+Request flow:
+
 User Browser
-      |
-      v
-Public IP (Port 80)
-      |
-      v
-Nginx (Reverse Proxy)
-      |
-      v
-Node.js App (Port 3000)
-      |
-      v
-Response returned to user
+     │
+     ▼
+Public Internet
+     │
+     ▼
+AWS EC2 Instance
+     │
+     ▼
+Nginx (Reverse Proxy - Port 80)
+     │
+     ▼
+Node.js Backend (Port 3000)
+     │
+     ▼
+PM2 Process Manager
 
 ## Features
 
